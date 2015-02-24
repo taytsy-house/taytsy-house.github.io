@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Дом Вашей мечты</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <style>
+html, body {
+	margin: 0;
+	height: 100%;
+}
+#body, html[data-device-type="portable"] #body {
+    height: 100%;
+}
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.5em;
+    color: #767676;
+}
+html[data-device-type="dedicated"] header div > div.containerCentered {
+    min-width: 1108px;
+}
+html[data-device-type="dedicated"] body, html[data-device-type="portable"] body, html[data-device-type="dedicated"] #body, html[data-device-type="portable"] #body {
+    height: 100%;
+}
+html[data-device-type="dedicated"] .containerCentered {
+    padding-left: 3%;
+    padding-right: 3%;
+}
+.table-row {
+	display: table-row;
+}
+.table-row.hero > #hero {
+	text-align: center;
+    vertical-align: middle;
+}
+#fixed-top {
+    height: 100%;
+    width: 100%;
+    display: table;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+}
+#fixed-top .filler {
+    height: 100%;
+}
+#fixed-top > .table-row > * {
+    display: table-cell;
+    vertical-align: bottom;
+}
+.moving-background.playing video {
+    opacity: 0.9;
+}
+.moving-background video {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+    opacity: 0.5;
+    transition: opacity 0.3s ease 0s;
+}
+audio, canvas, video {
+    display: inline-block;
+}
+.table-row.hero > #hero {
+    text-align: center;
+}
+.dark {
+    color: #FFF;
+}
+
+header div > div.containerCentered {
+    padding: 21px 0px;
+    height: 30px;
+    transition: height 0.2s ease-out 0s;
+}
+.containerCentered {
+    margin-right: auto;
+    margin-left: auto;
+    box-sizing: content-box;
+    min-width: 67.1429em;
+    max-width: 82.1429em;
+}
+#main-menu {
+    display: inline-block;
+    padding: 0px;
+    margin: 0px 0px 0px 12px;
+    vertical-align: top;
+}
+header #main-menu ul {
+    display: inline-block;
+    padding: 0px;
+    margin: 0px;
+}
+header #main-menu ul {
+    display: inline-block;
+    padding: 0px;
+    margin: 0px;
+}
+ul, ol {
+    list-style-type: none;
+    padding-left: 0px;
+}
+header #main-menu li {
+    display: inline-block;
+    list-style-type: none;
+    padding: 0px 3px;
+}
+#login-header {
+    display: none;
+    float: right;
+}
+header form {
+    margin-top: 1px;
+}
+.moving-background-container {
+    /*background-color: #000;*/
+}
+#fixed-top > .table-row > * {
+    display: table-cell;
+    vertical-align: bottom;
+}
+#fixed-top > header > div {
+    z-index: 1;
+}
+header > div {
+    position: relative;
+    background: none repeat scroll 0% 0% #FFF;
+    box-shadow: 0px -1px rgba(0, 0, 0, 0.1) inset;
+}
+#header-buttons {
+    float: right;
+}
+.blue h1, .blue h2, .blue h3, .blue h4, .blue a, .dark h1, .dark h2, .dark h3, .dark h4, .dark a {
+    color: #FFF;
+}
+h1, .huge {
+    font-size: 4.28571rem;
+    line-height: 1.66667em;
+}
+h1, h2, .x-large {
+    letter-spacing: 0.02em;
+}
+h1, h2, h3, h4, h5, h6, .headline {
+    font-weight: 300;
+    color: #444;
+    margin: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+.table-row.hero > #hero {
+    text-align: center;
+}
+.dark {
+    color: #FFF;
+}
+.hero-hugger {
+    text-align: center;
+    box-sizing: border-box;
+    background: none repeat scroll 0% 0% #FFF;
+    z-index: 3;
+    transform: translate(0px, 0px);
+}
+html[data-device-type="dedicated"] .containerCentered {
+    padding-left: 3%;
+    padding-right: 3%;
+}
+.hero-hugger .containerCentered {
+    padding-top: 16px;
+    line-height: 0.5em;
+}
+.containerCentered {
+    margin-right: auto;
+    margin-left: auto;
+    box-sizing: content-box;
+    min-width: 67.1429em;
+    max-width: 82.1429em;
+}
+.hero-hugger {
+    text-align: center;
+}
+#hugger-arrow {
+    top: -10px;
+}
+.fancy-down-arrow-grey {
+    background: url("https://www.paypalobjects.com/webstatic/mktg/2014design/fancy-down-arrow2x.png") no-repeat scroll center center / 22px 13px transparent;
+    width: 38px;
+    height: 38px;
+    display: inline-block;
+    text-indent: -999em;
+    overflow: hidden;
+    position: relative;
+    margin: 0px auto;
+    border: 1px solid #D3D3D3;
+    border-radius: 21px;
+}
+a {
+    font-size: 1.07143rem;
+    line-height: 1.5em;
+    font-weight: bold;
+    color: #0079AD;
+    text-decoration: none;
+}
+a {
+    background: none repeat scroll 0% 0% transparent;
+}
+.hero-hugger .containerCentered {
+    line-height: 0.5em;
+}
+.hero-hugger {
+    text-align: center;
+}
+.hero-video-still-uncookied .novideo-bg {
+    background-image: url("https://www.paypalobjects.com/webstatic/mktg/wright/videos/home-signup.jpg");
+}
+.novideo-bg {
+    display: none;
+    background-position: center top;
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.9;
+}
+html[data-device-type="dedicated"] .hero-bg, html[data-device-type="dedicated"] .editorial {
+    min-width: 71.7143em;
+}
+.hero-bg, .hero-video-still-cookied .novideo-bg {
+    background-image: none;
+}
+.hero-bg, .editorial {
+    min-width: 71.7143em;
+}
+.dark {
+    background-color: #333;
+    color: #FFF;
+}
+.hero-bg, .editorial-bg {
+    overflow: hidden;
+}
+.hero-bg, .hero-bg .parallax-bg {
+    background-position: 60% center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.moving-background {
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+    background-color: transparent;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.panel {
+    padding: 90px 0px;
+}
+.row-fluid {
+    background: none repeat scroll 0% 0% #FFF;
+    position: relative;
+    z-index: 2;
+    transform: translate(0px, 0px);
+}
+.row-fluid {
+    width: 100%;
+    box-sizing: border-box;
+}
+.blue {
+    background-color: #009CDE;
+    color: #FFF;
+}
+p {
+    padding-top: 4px;
+    padding-bottom: 14px;
+    margin: 0px;
+    font-size: 1.071rem;
+    line-height: 1.5em;
+    color: #555;
+}
+.blue p {
+    color: #FFF;
+}
+.editorial-left .containerCentered .editorial-container:first-child {
+    float: right;
+}
+.row-fluid [class*="span"]:first-child {
+    margin-left: 0px;
+}
+html[data-device-type="dedicated"] .editorial-container {
+    height: 37.8571em;
+    line-height: 37.8571em;
+}
+.row-fluid .span6 {
+    width: 49%;
+}
+.row-fluid [class*="span"] {
+    float: left;
+    margin-left: 2%;
+    min-height: 1px;
+    box-sizing: border-box;
+}
+.editorial-container {
+    height: 37.8571em;
+    line-height: 37.8571em;
+}
+
+.editorial-container {
+    padding-right: 2%;
+}
+.editorial-cell {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.5em;
+}
+h3, .large, html[data-device-type="mobile"] h2, html[data-device-type="mobile"] .x-large {
+    font-size: 2rem;
+    line-height: 1.25em;
+}
+h3, h4, h5, h6, .large, .medium, .small {
+    letter-spacing: 0.01em;
+}
+h2, .x-large {
+    font-size: 2.857rem;
+    line-height: 1.25em;
+}
+h1, h2, .x-large {
+    letter-spacing: 0.02em;
+}
+h1, h2, h3, h4, h5, h6, .headline {
+    font-weight: 300;
+    color: #444;
+    margin: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+.editorial p {
+    padding-top: 6px;
+    padding-bottom: 9px;
+}
+p {
+    padding-top: 4px;
+    padding-bottom: 14px;
+    margin: 0px;
+    font-size: 1.071rem;
+    line-height: 1.5em;
+    color: #555;
+}
+html[data-device-type="dedicated"] .editorial-container {
+    height: 37.8571em;
+    line-height: 37.8571em;
+}
+.editorial-left .editorial-img {
+    background-position: 30% bottom;
+}
+.row-fluid .span6 {
+    width: 49%;
+}
+.row-fluid [class*="span"] {
+    float: left;
+    margin-left: 2%;
+    min-height: 1px;
+    box-sizing: border-box;
+}
+.editorial-container {
+    height: 37.8571em;
+    line-height: 37.8571em;
+}
+.editorial-container {
+    padding-right: 2%;
+}
+.editorial-img {
+    background-clip: padding-box;
+    background-origin: padding-box;
+    background-repeat: no-repeat;
+}
+    </style>
+</head>
+<body>
+
+<div id="body">
+
+	<div style="height: 96%;" id="fixed-top" class="moving-background-container">
+      
+<header class="table-row" role="banner" style="background-color:#fff">
+    <div>
+        <div class="containerCentered ">
+		<!--<a href="#Menu" id="menu-button" role="button">Menu</a>
+           <nav id="main-menu" role="navigation">
+				<ul>        
+					<li><a>Дом</a></li>		
+					<li><a>Магазины</a></li>		
+					<li><a>Интернет</a></li>		
+					<li><a>Расположение</a></li>        
+				</ul>
+    
+    
+				<ul class="sublist">            
+						<li><a href="https://www.paypal.com/ru/cgi-bin/webscr?cmd=_help" id="menu-sublist-help">Help</a></li>            
+						<li><a href="https://www.paypal.com/ru/cgi-bin/webscr?cmd=_contact-phone" id="menu-sublist-contact">Contact</a></li>
+				</ul>
+    
+			</nav>          
+            -->
+			<div id="header-buttons" class="" style="font-size:30px"> +7 960 111-11-111</div>
+                
+
+                <div id="login-header" class="form-inline ">
+                                                
+                <form action="https://www.paypal.com/ru/cgi-bin/webscr?cmd=_login-submit" method="post" novalidate="novalidate" name="login_form">
+    <div class="input-wrapper small">
+        <label class="accessAid" for="login_email">Электронный адрес</label>
+        <input id="login_email" name="login_email" title="Введите действительный электронный адрес." placeholder="Электронный адрес" class="small with-helper" data-tabindex="1" type="text">
+        <div class="input-link">
+            <a title="Забыли электронный адрес?" class="input-button emailRecovery" id="passwordRecovery1" href="https://www.paypal.com/ru/cgi-bin/webscr?cmd=_account-recovery&amp;from=PayPal" data-tabindex="4">Забыли электронный адрес?</a>
+        </div>
+    </div><div class="input-wrapper small">
+        <label class="accessAid" for="login_password">Пароль</label>
+        
+            <input id="login_password" name="login_password" autocomplete="off" placeholder="Пароль" title="Введите пароль." class="small with-helper" data-tabindex="2" type="password">
+        
+        <div class="input-link">
+            <a title="Забыли пароль?" id="passwordRecovery2" class="input-button passwordRecovery2 useModal" href="https://www.paypal.com/ru/cgi-bin/webscr?cmd=_account-recovery" role="button" data-tabindex="5">Забыли пароль?</a>
+            
+        </div>
+    </div><input name="submit" class="btn btn-small btn-secondary start" value="Войти" data-tabindex="3" type="submit">
+    <a href="https://www.paypal.com/signup/account?country.x=RU&amp;locale.x=ru_RU" id="signup-button-inner" name="SignUp_header" class="btn btn-small btn-secondary btn-signup" data-tabindex="6">Зарегистрироваться</a>
+<input value="Firefox" name="browser_name" type="hidden"><input value="35" name="browser_version" type="hidden"><input value="35.0" name="browser_version_full" type="hidden"><input value="Windows" name="operating_system" type="hidden"><input value="v=1;a1=na~a2=na~a3=na~a4=Mozilla~a5=Netscape~a6=5.0 (Windows)~a7=20100101~a8=na~a9=true~a10=Windows NT 5.1~a11=true~a12=Win32~a13=na~a14=Mozilla/5.0 (Windows NT 5.1; rv:35.0) Gecko/20100101 Firefox/35.0~a15=false~a16=ru-RU~a17=na~a18=www.paypal.com~a19=na~a20=na~a21=na~a22=na~a23=1920~a24=1022~a25=24~a26=988~a27=na~a28=Sat Feb 21 2015 12:45:43 GMT+0400 (Russian Standard Time)~a29=4~a30=na~a31=yes~a32=na~a33=na~a34=no~a35=no~a36=yes~a37=no~a38=online~a39=no~a40=Windows NT 5.1~a41=no~a42=no~" name="bp_mid" id="bp_mid" type="hidden"><input name="bp_ks1" id="bp_ks1" type="hidden"><input name="bp_ks2" id="bp_ks2" type="hidden"><input name="bp_ks3" id="bp_ks3" type="hidden"><input value="" name="flow_name" type="hidden"><input value="16" name="fso_enabled" type="hidden"></form>
+                                
+     
+                </div>
+            
+        </div>
+    </div>
+</header>
+
+	  
+	  
+    <div class="table-row hero">
+
+        <div id="hero" class="hero-bg content-block moving-background filler dark hero-video-still-uncookied playing video-loaded">
+
+            <div class="novideo-bg"></div>
+            
+            
+                <h1 style="font-size:80px; line-height:90px">Начни новую жизнь в доме своей мечты</h1>
+     
+                    <video style="width: 100%; height: auto; visibility: visible;" autoplay="autoplay" muted="muted" poster="https://www.paypalobjects.com/webstatic/mktg/wright/videos/home-signup.jpg">
+                        <source src="video/1.mp4" type="video/mp4">
+                        <source src="video/1.webm" type="video/webm">
+                    </video>
+
+		</div>
+    </div>
+    
+
+
+    <div class="table-row hugger-row">
+         <div class="hero-hugger">
+            <div class="containerCentered">
+
+                
+
+                <a href="#home_3" class="fancy-down-arrow-grey" id="hugger-arrow" title=""></a>
+            </div>
+        </div>
+    </div>
+	</div>
+	
+	
+	
+	<div role="main" id="main" class="containerMobileFullWidth">
+	
+	
+<style>
+#home_3 td{font-size:20px; line-height:25px; padding:5px;}
+
+</style>
+<section id="home_3" style="background: none; height:600px; margin-top:100px">
+    <div style="width:600px; margin:auto; text-align:center"><p style="font-size:30px">Что бы Вы разместили в 290 метрах Вашего нового дома?</p></div>
+	<table style="width:600px; margin:auto; " >
+		<tr>
+			<td valign="top"><img src="http://nr.moy.su/_ph/4/651853031.jpg" width="400">5 спален, 4 кухни, 4 ванных + мансарда ... или Ваш вариант?</td>
+			<td valign="top"><img src="http://www.maihan.vn/upload_image/images/xong-hoi-kho-1.jpg" width="400">
+			А как на счет сауны, в которой можно попариться после тяжелого рабочего дня просто нажав на одну кнопку? Стомость постройки сауны составляет всего около 100 т.р.
+			</td>
+			<td valign="top"><img src="http://forum.ngs.ru/preview/forum/upload_files/120b58d2df2353d1f980929f2de01e4f_96474db5b8525b3829b159fc9c162c74_131192570749_800px.jpg" width="400" height="300">Лень ездить в фитнес-центр, но хочется быть в форме? Вы можете сделать свой мини-зал. Беговая дорожка, гантели, грифы, блины, скамайки, пара тренажоров - это стоит всего около 120 т.р.</td>
+		</tr>
+	</table>
+	
+</section>
+
+
+
+<section class="row-fluid panel blue reverseLink">	
+	<div class="containerCentered" style="margin:auto; width:400px">
+		<div style="text-align:center;">						
+			<h1 style="font-size:40px">Сколько придется потратить?</h1>
+			<p style="font-size:30px">Дом с участком я продаю за 2,3 млн. руб. Чтобы довести дом до состояния, когда в нем уже можно жить, Вам потребуется около 1,5 млн рублей. Итого 2,3 млн. руб + 1,5 млн. руб = 3,8 млн. руб. Это цена маленькой однокомнатной квартиры в Санкт-петербурге</p>
+			
+			<p style="font-size:25px">1м2 Вам обойдется в 13 100 руб, это в 7 раз дешевле, чем покупка квартиры такой же площади</p>
+		</div>
+	</div>	
+</section>
+
+<style>
+#money h2{font-size:30px;}
+#money p{font-size:20px}
+</style>
+
+<section class="row row-fluid editorial editorial-left " id="money"  style="height:700px">
+    
+    <div class="container containerCentered">
+        <div class=" col-sm-6 span6 col-sm-offset6 editorial-container editorial-text">
+            <div class="editorial-cell">
+                <h2>Отдаю так дешево, потому что срочно</h2>
+                
+                    <p>
+
+Я строил этот дом для себя и своей семьи. Но из-за срочного переезда заграницу приходится его продавать. Всего я потратил на  дом и участок более 3 млн рублей.
+</p>
+                
+                
+                
+                
+            </div>
+        </div>
+        
+        <div class="editorial-img col-sm-6 span6 editorial-container" style="background-image: url('http://www.molomo.ru/img/psycholog_money.jpg'); background-size: 500px "></div>
+        
+    </div>
+</section>
+
+    
+
+
+
+<style>
+#back {
+    background: url(http://img.mota.ru/upload/wallpapers/2013/07/30/16/02/36821/E19JWfbs6a-1920x1080.jpg) 50% 0 fixed no-repeat;
+	-moz-background-size: 100%; 
+    -webkit-background-size: 100%; 
+    -o-background-size: 100%; 
+    background-size: 100%; 
+    height: 400px; 
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    padding: 100px 0 100px 0;
+}
+#front {
+    background: url(http://numbers.in.ua/images_num/articles/61/tjulpany-cvety-k-8-marta.jpg) 50% 0 no-repeat;
+	-moz-background-size: 100%; 
+    -webkit-background-size: 100%; 
+    -o-background-size: 100%; 
+    background-size: 100%; 
+    height: auto; 
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    padding: 200px 0;
+}
+#home_1 p{
+color:#3E3E3E;
+font-size: 36px;
+line-height: 36px;
+}
+
+#front p{
+font-size:20px; 
+color:#3E3E3E;
+line-height: 36px;
+}
+
+#back_2 p{
+	font-size:20px; 
+	color:#555;
+	line-height: 36px;
+}
+#back p {font-size:30px; color:#fff}
+</style>
+
+<section id="home_1" style="background-color: #fff">
+<div style="text-align:center; font-size:30px">
+<p>264 метра для Вашей фантазии на заднем дворе</p>
+</div>
+</section>
+	
+<section id="back" data-speed="4" data-type="background" style="overflow:hidden">
+    <div style="max-width:700px; float:right">
+		<p>Вы можете жарить шашлыки, барбекью, приглашать друзей на пикники, наслаждаться летним сонцем лежа в гамаке</p>
+	</div>
+</section>
+<section id="back_2" style="background: none; margin-bottom:150px">
+    <div style="text-align:center;">
+		
+    </div>
+</section>
+
+
+
+<section id="home_1" style="background-color: #fff">
+<div style="text-align:center; font-size:30px">
+</div>
+</section>
+	
+	
+<section id="front2" style="background: none">
+    <div style="text-align:center; font-size:30px">
+	<p style="max-width:800px; margin:auto">Вы можете построить гараж, посадать красивые, вкусно пахнущие цветы, сделать красивые дорожки, по которым вы будете возвращаться домой с работы</p>
+    </div>
+</section>
+
+<style>
+#front h1{font-size:50px; text-align:center; color:#fff}
+#front2 p{font-size:20px; text-align:center;}
+</style>
+<section id="front" data-speed="4" data-type="background" style="overflow:hidden; margin-bottom:150px">
+	<h1>175 метров для Вашей фантазии на переднем дворе</h1>
+</section>
+
+
+
+
+<section id="home3">
+
+</section>
+
+<style>
+#yota p{font-size:20px}
+</style>
+<section id="yota" style="background: none; margin-bottom:250px">
+    <div style="text-align:center; width:800px; margin:auto">
+	<h1>Интернет 20mbit</h1><p>Когда я выбирал участок, я ездил с ноутбуком и проверял сигнал от yota, т.к. интернет сейчас также важен как электричество</p>	
+
+	<div><img src="http://www.techno-sky.ru/image/yota2011.gif"></div>	
+	</div>
+</section>
+
+<style>
+#okey div {float:left; width:110px; margin-bottom:5px}
+#okey h1{font-size:30px; margin-bottom:35px; line-height:32px}
+#okey p {font-size:12px; line-height:15px}
+</style>
+</style>
+<section id="home_3" style="background: none; margin-bottom: 150px">
+    <div id="okey" style="text-align:center; font-size:12px; width:800px; margin:auto">
+	
+	<h1>В 7 минутах езды находится огромный торговый центр Окей</h1>
+	
+	<div><img src="http://www.okmarket.ru/media/stores/features/visa.png"><p>Принимают карты</p></div>
+	
+	<div><img src="http://www.okmarket.ru/media/stores/features/parfum.png"><p>Бутик косметики</p></div>
+	
+	<div><img src="http://www.okmarket.ru/media/stores/features/children.png"><p>Детская площадка</p></div>
+	
+	<div><img src="http://www.okmarket.ru/media/stores/features/fish.png"><p>Рыбный остров</p></div>
+	
+	<div><img src="http://www.okmarket.ru/media/stores/features/brad.png"><p>Пекарня</p></div>
+	
+	<div><img src="http://www.okmarket.ru/media/stores/features/chicken.png"><p>Кулинария</p></div>
+	
+	<div><img src="http://www.okmarket.ru/media/stores/features/drugstore.png"><p>Аптека</p></div>
+	
+	<div><img src="http://www.okmarket.ru/media/stores/features/restaurant.png"><p>Блюда на заказ</p></div>
+	
+	<div><img src="http://www.okmarket.ru/media/stores/features/coolinary_1.png"><p>Проведение дегустаций</p></div>
+	
+	<div><img src="http://www.okmarket.ru/media/stores/features/CAFE.png"><p>Кафе</p></div>
+	
+	<div style="clear:both;float:none"></div>
+	
+	</div>
+</section>
+
+
+<style>
+#home_3 h2{font-size:30px; margin-bottom:50px}
+#home_3 .row h1{font-size:25px; line-height:24px; margin-bottom:10px}
+#home_3 .img{float:left; margin-right:25px; height:150px}
+#home_3 .row p{font-size:15px}
+</style>
+<section id="home_3" style="background-color: #EFEFEF;">
+<div style="max-width:900px; margin:auto; padding-top:50px; padding-bottom:100px">
+<h2 style="text-align:center">А в 8 минутах езды - Гатчина со всей необходимой инфраструкторй</h2>
+<div class="row">
+  <div class="col-md-4"><div class="img"><img src="http://livedemo00.template-help.com/muse_52629/images/page1_icon2.png"></div><h1>Детские сады</h1><p>Ваши малыши всегда будут под присмотром опытных воспитателей</p></div>
+  
+  <div class="col-md-4"><div class="img"><img src="http://livedemo00.template-help.com/muse_52629/images/page1_icon1.png"></div><h1>Школы</h1><p>Ваши дети будут учиться в отличных школах</p></div>
+  
+
+  <div class="col-md-4"><div class="img"><img src="http://livedemo00.template-help.com/muse_52629/images/page1_icon3.png"></div><h1>Поликлиники</h1><p>Квалифицированные врачи всегда придут Вам на помощь</p></div>
+  
+</div>
+<div class="row">
+  <div class="col-md-4"><div class="img"><img src="http://livedemo00.template-help.com/muse_52629/images/page1_icon4.png"></div><h1>Бассейны</h1><p>Ваши дети и Вы сможете плескаться в теплой воде круглый год</p></div>
+  <div class="col-md-4"><div class="img"><img src="http://livedemo00.template-help.com/muse_52629/images/page1_icon5.png"></div><h1>Рестораны</h1><p>Огромное количество разнообразных рестаранов на любой вкус</p></div>
+  <div class="col-md-4"><div class="img"><img src="http://livedemo00.template-help.com/muse_52629/images/page1_icon6.png"></div><h1>Торговые центры</h1><p>Огромные торговые центры ждут Вас</p></div>
+</div>
+</div>
+
+
+    <div style="text-align:center; font-size:30px">
+	
+	
+	
+	
+	
+	
+		
+	
+	
+	
+	</div>
+</section>
+
+
+<style>
+#heating .row h1{font-size:35px; line-height:35px; margin-bottom:10px; color:#000}
+#heating img {width:300px}
+#heating p {font-size:18px; line-height:26px; color:#444}
+
+</style>
+<section id="heating" style="background: none">
+<div style="max-width:900px; margin:auto; padding-top:50px; padding-bottom:100px;">
+
+	<div class="row" style="margin-top:100px; margin-bottom:50px">
+	  <div class="col-md-6" style="text-align:center"><img src="http://www.sobr-rf.ru/wp-content/uploads/2013/09/stena_karkas_1.jpg"></div>
+	  <div class="col-md-6"><h1>Скандинавская технология</h1><p>Скандинавская технология каркасного дома является доминирующей в таких странах, как Финляндия, Норвегия и Швеция. <b>Более половины всех строений</b> там строятся по этой системе. Дома, построенные по скандинавской технологии, отлично зарекомендовали себя в процессе эксплуатации при переменной влажности воздуха и низких температурах. Так как наш климат очень близок к климату указанных стран, скандинавская технология идеальна для нашего города.</p></div>
+	</div>
+	
+	<div style="width:560px; margin:auto; margin-bottom:100px">
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/Dmp-vskiHOw" frameborder="0" allowfullscreen></iframe>
+	</div>
+	
+	<div class="row">
+		<div class="col-md-6"><h1>Отопление</h1><p>Я долго изучал вопрос тепроводимости стен и подбирал идеальную толщину, чтобы затраты на отопление были не очень большими. В обычную питерскую погоду на отопление 290 м2 дома у Вас будет уходить угля или дров примерно на 15 000 руб. в год</p>
+	</div>
+	  <div class="col-md-6" style="text-align:center"><img src="http://www.kzn.ru/sites/default/files/otoplenie.jpeg"></div>
+	</div>
+</div>
+
+    <div style="text-align:center; font-size:30px">
+	
+	
+	</div>
+</section>
+
+
+
+<section class="row-fluid panel blue reverseLink">	
+	<div class="containerCentered" style="margin:auto; width:400px">
+		<div style="text-align:center;">						
+			<p style="font-size:30px">Ограничений на электричество нет и не будет, Вы можете использовать и 20 и 25 квт, в договоре нет лимитов.</p>
+		</div>
+	</div>	
+</section>
+
+
+<style>
+#mar .row h1{font-size:35px; line-height:35px; margin-bottom:10px; color:#000}
+#mar img {width:100%}
+#mar p {font-size:18px; line-height:26px; color:#444}
+
+</style>
+<section id="mar" style="background: none">
+<div style="max-width:900px; margin:auto; padding-top:50px; padding-bottom:100px;">
+
+	<div class="row" style="margin-top:100px; margin-bottom:50px">
+	  <div class="col-md-6" style="text-align:center"><img src="1.png" style="border: 1px solid #ccc"></div>
+	  <div class="col-md-6">
+	  <p>Расположение участка просто идеально. Он достаточно далеко далеко от шоссе, чтобы летом не было слышно машин и не слишком далело, чтобы можно было дойти пешком до маршрутки</p>
+	  <p>До маршрутки всего 4 минуты пешком</p>
+	<p>До гатчинского шоссе 450 метров</p></div>
+	</div>
+</div>
+</section>
+
+
+
+<section id="home_3" style="background: none">
+    <div style="text-align:center; font-size:30px">
+	
+	
+	
+	</div>
+</section>
+
+<style>
+#road p{font-size:50px; color:#fff};
+</style>
+<section id="road" style="padding-top:100px;padding-bottom:100px; height:400px; background-image: url('http://picsdesktop.net/Winter/1920x1440/PicsDesktop.net_115.jpg'); background-size: cover;background-position: center center; " >
+    <div style="text-align:center; ">
+	
+	<p style="">Дороги зимой чистятся, Вы в любой момент сможете выехать на Гатчинское шоссе на машине. Также есть возможность выехать на Киевское шоссе минуя Гатчинское</p>
+	
+	</div>
+</section>
+
+
+
+<style>
+#kad .row h1{font-size:35px; line-height:35px; margin-bottom:10px; color:#000}
+#kad img {width:100%}
+#kad p {font-size:18px; line-height:26px; color:#444}
+
+</style>
+<section id="kad" style="background: none">
+<div style="max-width:900px; margin:auto; padding-top:50px; padding-bottom:100px;">
+
+	<div class="row" style="margin-top:100px; margin-bottom:50px">
+	  <div class="col-md-6" style="text-align:center"><img src="2.png"style="border: 1px solid #ccc"></div>
+	  <div class="col-md-6">
+	  <p>20 км до КАДА. Это около 20 минут езды</p>
+	  <p>37 км до центра Санкт-петербруга. Это около 39 минут</p>
+	</div>
+</div>
+</section>
+
+
+
+
+<section class="row-fluid panel blue reverseLink">	
+	<div class="containerCentered" style="margin:auto; width:400px">
+		<div style="text-align:center;">						
+			<p style="font-size:30px">Перспектива подключения газа. В 500 метрах газ уже есть </p>
+		</div>
+	</div>	
+</section>
+
+<section id="home_3" style="background: none">
+    <div style="text-align:center; font-size:30px">
+	
+	
+	</div>
+</section>
+
+<style>
+#snip h2{font-size:30px;}
+#snip p{font-size:20px}
+</style>
+
+<section class="row row-fluid editorial editorial-left " id="snip"  style="height:700px">
+    
+    <div class="container containerCentered">
+        <div class=" col-sm-6 span6 col-sm-offset6 editorial-container editorial-text">
+            <div class="editorial-cell">
+                <h2>100% соблюдение всех норм и правил</h2>
+                
+     	<p>Когда я проектировал дом я внимательно изучил все СНиПы, чтобы потом не было проблем. Дом построен по всем правилам и законодательным нормам</p>
+   
+                
+                
+                
+            </div>
+        </div>
+        
+        <div class="editorial-img col-sm-6 span6 editorial-container" style="background-image: url('http://prostoo.ucoz.ru/_nw/1/11154550.jpg'); background-size: 500px "></div>
+        
+    </div>
+</section>
+
+
+<style>
+#now {
+    background: url(http://www.topoboi.com/pic/201307/2560x1600/topoboi.com-3141.jpg) 50% 0 fixed no-repeat;
+	-moz-background-size: 100%; 
+    -webkit-background-size: 100%; 
+    -o-background-size: 100%; 
+    background-size: 100%; 
+    height: 700px; 
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    padding: 100px 0 100px 0;
+}
+#now .td{background-color:#fff; padding:20px; margin:10px; width:240px}
+#now p {font-size:15px; text-align:center}
+</style>
+<section id="now" data-speed="4" data-type="background" style="overflow:hidden">
+    <div style="max-width:700px; margin:auto">
+	
+		<div class="row">
+		  <div class="col-md-4">
+		  
+			  <div class="td">
+				<a href="P1060726.JPG" target="_blank"><img src="P1060726.JPG" width=200></a><p>Фото дома</p>
+			  </div>
+		  </div>
+		  
+		  
+		  <div class="col-md-4">
+			  <div class="td">
+				<a href="index.png" target="_blank"><img src="index.png" width=200></a><p>Собственность</p>
+			  </div></div>
+		  
+
+		  <div class="col-md-4">
+			  <div class="td">
+				<a href="index2.png" target="_blank"><img src="index2.png" width=200></a><p>Кадастровый паспорт</p>
+			  </div></div>
+		  
+		</div>
+		  
+		  <p style="padding:60px; padding-left:110px; font-size: 30px; text-align:center; color:#fff">Звоните<br> +7 960 111-11-11</p>
+	</div>
+</section>
+
+
+
+<section id="home_3" style="background: none">
+	
+	<script type="text/javascript" charset="utf-8" src="http://api-maps.yandex.ru/services/constructor/1.0/js/?sid=kwn96WCYgIm_8LPJxGkhPmtodcUJfjsy&id=mymap"></script>
+	
+		<div id="mymap" style="width: 100%; height: 600px"></div>
+
+</section>
+
+
+
+
+	</div>
+	
+	
+	
+	
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="libs/jquery/dist/jquery.min.js"><\/script>')</script>
+<script src="src/jquery.vide.js"></script>
+</body>
+</html>
