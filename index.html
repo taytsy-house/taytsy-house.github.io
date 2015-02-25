@@ -34,7 +34,14 @@ $(function() {
 		setTimeout(function(){ 
 			$( "#dialog" ).dialog( "close" ); 			
 		}, 3000);		
-	}, 30000);	
+	}, 300);	
+	
+	var count_peoples = Math.floor(Math.random() * (5 - 2 + 1)) + 2;
+	if (count_peoples==2 || count_peoples==3 || count_peoples==4)
+		$('#text1').text('Эту страницу просматривают еще '+count_peoples+' человека');
+	else
+		$('#text1').text('Эту страницу просматривают еще '+count_peoples+' человек');
+
 });
 
 		
@@ -420,7 +427,7 @@ html[data-device-type="dedicated"] .editorial-container {
 </head>
 <body>
 <div id="dialog">
-<p>Эту страницу просматривают еще 3 человека</p>
+<p id="text1">Эту страницу просматривают еще <span id="count_peoples">3</span> человека</p>
 </div>
 <div id="body">
 
